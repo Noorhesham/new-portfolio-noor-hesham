@@ -7,14 +7,13 @@ import Image from "next/image";
 
 const ProjectDescription = ({ project, moveback }: { project: any; moveback: () => void }) => {
   return (
-    <div className="  h-full mb-12 mt-10 items-center justify-center  w-[80vw]" key={project.id}>
+    <div className=" text-white  h-full mb-12 mt-10 items-center justify-center  w-[80vw]" key={project.id}>
       <Button
+        text="Back"
         onClick={moveback}
-        className="flex hover:text-purple duration-200  w-fit items-center transition-all left-0 mb-5 3"
-      >
-        <FaBackward />
-        Back
-      </Button>
+        className="flex hover:text-purple duration-200 absolute  w-fit items-center transition-all left-0 mb-5 3"
+      />
+
       <div className=" relative flex items-center justify-center  w-[80vw] overflow-hidden   mb-10">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-3  w-full  z-10 justify-between items-center">
           {Array.isArray(project.img) ? (

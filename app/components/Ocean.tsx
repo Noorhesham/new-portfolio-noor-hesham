@@ -11,14 +11,39 @@ import Project from "./Project";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { Curtains } from "curtainsjs";
 import SimplePlane from "./Plane";
+import { splitStringUsingRegex } from "@/lib/utils";
+import { useRouter } from "next/navigation";
+import ProjectDescription from "./ProjectDescription";
 
 // { clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" },
 // {
 //   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
 const Ocean = () => {
   const { locoScroll } = useSmoothScroll();
-  const curtainsRef = useRef(null);
+  const router = useRouter();
+  const handleProjectClick = (clickedProject: any) => {
+    setSelectedProject(clickedProject);
+    const projectId = clickedProject;
+    router.push(`/?projectBig=${projectId}`, { scroll: false });
+  };
+  const handleBackClick = () => {
+    gsap.to(".project-details", {
+      opacity: 0,
+      duration: 0.5,
+      onComplete: () => {
+        setSelectedProject("");
+        router.push("/", { scroll: false });
 
+        // Use locoScroll to reset scroll position
+        if (locoScroll) {
+          locoScroll.scrollTo(0, { duration: 0, disableLerp: true }); // Instant scroll to the top
+        }
+
+        gsap.set(".project", { clearProps: "all" });
+      },
+    });
+  };
+  const [selectedProject, setSelectedProject] = useState("");
   useEffect(() => {
     if (locoScroll) {
       gsap.set(".bg1", { scale: 1.4 });
@@ -51,22 +76,51 @@ const Ocean = () => {
       );
       //enterance for 1st project
       // Entrance for Project 1
-      tl.fromTo(
-        ".project-1",
-        { x: -400, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: ".project-1",
-            start: window.innerHeight * 1,
-            end: "+=" + window.innerHeight * 2,
-            scrub: true,
-            scroller: ".main-container",
-            markers: true,
-          },
-        }
-      )
+      tl.to(".heading", {
+        x: 300,
+        scale: 0.8,
+        scrollTrigger: {
+          trigger: ".heading ",
+          start: "top top",
+          end: "+=" + window.innerHeight * 0.5,
+          scrub: true,
+          scroller: ".main-container",
+          markers: true,
+        },
+      })
+        .fromTo(
+          ".heading span",
+          { filter: "blur(5px)" },
+          {
+            filter: "blur(0px)",
+            stagger: 0.3,
+            scrollTrigger: {
+              trigger: ".heading ",
+              start: "top top",
+              end: "+=" + window.innerHeight * 1,
+              scrub: true,
+              scroller: ".main-container",
+              markers: true,
+            },
+          }
+        )
+        .fromTo(
+          ".project-1",
+          { x: -400, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: ".project-1",
+              start: window.innerHeight * 1,
+              end: "+=" + window.innerHeight * 2,
+              scrub: true,
+              scroller: ".main-container",
+              markers: true,
+            },
+          }
+        )
+
         // Entrance for Project 2
         .fromTo(
           ".project-2",
@@ -85,6 +139,18 @@ const Ocean = () => {
             },
           }
         )
+        .to(".heading", {
+          opacity: 0,
+          y: -200,
+          scrollTrigger: {
+            trigger: ".project-2",
+            start: window.innerHeight * 2.3, // Matches timing with Project 1 exit
+            end: "+=" + window.innerHeight * 2, // Adjusted to match Project 1 timing
+            scrub: true,
+            scroller: ".main-container",
+            markers: true,
+          },
+        })
         // Exit for Project 1 (as Project 2 enters)
         .fromTo(
           ".project-1",
@@ -204,29 +270,67 @@ const Ocean = () => {
               markers: true,
             },
           }
+        )
+        .fromTo(
+          ".heading2",
+          { x: -1400, filter: "blur(4px)", opacity: 0 },
+          {
+            x: 600,
+            filter: "blur(0px)",
+            opacity: 1,
+            scrollTrigger: {
+              trigger: ".bg2",
+              start: window.innerHeight * 6.4,
+              end: "+=" + window.innerHeight * 3,
+              scrub: true,
+              scroller: ".main-container",
+              markers: true,
+            },
+          },
+          "<-"
         );
     }
   }, [locoScroll]);
-  useEffect(() => {});
+
   return (
     <div className="bg1  relative">
-      <SimplePlane />
-      <div></div>
+      <h1 className=" text-7xl flex gap-1 z-20 absolute top-20  font-extrabold text-white heading">
+        {splitStringUsingRegex("BEST OF MY SOLO PROJECTS !").map((w) => (
+          <span className="inline-block">{w}</span>
+        ))}
+      </h1>
       <div className="  absolute inset-0 w-full h-screen">
         <Image src="/ocean.svg" className=" object-cover" alt="ocean" fill />
       </div>
-      <div className="bg2 absolute bottom-[-15rem] h-full w-[30rem]   ">
-        <AnimatedImage className="w-full" data="diver.json" />
-      </div>
+      {!selectedProject && (
+        <>
+          {" "}
+          <div className="bg2 absolute bottom-[-15rem] h-full w-[30rem]   ">
+            <AnimatedImage className="w-full" data="diver.json" />
+          </div>
+          <h1 className=" text-7xl flex gap-1 z-20 absolute bottom-[-15rem]  font-extrabold text-white heading2">
+            THIS WAS JUST THE BEGINING
+          </h1>
+        </>
+      )}
       <MaxWidthWrapper className="projects">
-        {projects.slice(0, 4).map((project, i) => {
-          const isEven = i % 2 === 0;
-          return (
-            <div className={`${!isEven ? "right-[20%]" : "left-[20%]"}  absolute top-40 project-${i + 1}`}>
-              <Project project={project} onClick={() => {}} />
-            </div>
-          );
-        })}
+        {selectedProject ? (
+          <div className="project-details absolute top-0 z-40">
+            <ProjectDescription moveback={handleBackClick} project={selectedProject} />
+          </div>
+        ) : (
+          projects.slice(0, 4).map((project, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <div
+                key={project.id}
+                className={`${!isEven ? "right-[20%]" : "left-[20%]"} z-30 absolute top-40 project project-${i + 1}`}
+              >
+                <Project project={project} onClick={() => handleProjectClick(project)} />
+              </div>
+            );
+          })
+        )}
       </MaxWidthWrapper>
     </div>
   );
