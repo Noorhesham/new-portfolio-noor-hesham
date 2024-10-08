@@ -6,19 +6,19 @@ import ImageTrial from "./components/ImageTrial";
 import Journey from "./components/Journey";
 import TechStack from "./components/TechStack";
 import Ocean from "./components/Ocean";
+import DeepOcean from "./components/DeepOcean";
 
 function Page() {
   return (
     <section className="main-container stickysection ">
-      {/* <Space />
+      <Space />
       <Snow />
       <ScrollX />
       <ImageTrial />
-      <Journey /> */}
-      {/* <TechStack /> */}
-        {" "}
-        <Ocean />
-    
+      <Journey />
+      <TechStack />
+      <Ocean />
+      <DeepOcean />
     </section>
   );
 }

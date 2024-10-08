@@ -14,66 +14,69 @@ const TechStack = () => {
     const audio = new Audio(bgSound);
 
     if (locoScroll) {
-      ScrollTrigger.create({
-        trigger: ".tech",
-        start: "top top",
-        end: "+=" + window.innerHeight * 2,
-        scroller: ".main-container",
-        scrub: true,
-        pin: true,
-        onEnter: () => {
-          console.log("enter");
-          audio.play();
-        },
-      });
-      const tl = gsap.timeline();
-      tl.to(".boat", {
-        x: -800,
-        filter: "blur(4px)",
-        scrollTrigger: {
-          trigger: ".boat",
-
+      const ctx = gsap.context(() => {
+        ScrollTrigger.create({
+          trigger: ".tech",
           start: "top top",
           end: "+=" + window.innerHeight * 2,
           scroller: ".main-container",
           scrub: true,
-        },
-      })
-        .fromTo(
-          ".dive-title1",
-          { x: 0 },
-          {
-            x: 800,
-            filter: "blur(4px)",
-            duration: 1,
-            scrollTrigger: {
-              trigger: ".dive-title1",
-              start: "top top",
-              end: "+=" + window.innerHeight * 2,
-              scrub: true,
-              scroller: ".main-container",
-              markers: true,
-            },
-          }
-        )
-        .fromTo(
-          ".stack",
-          { opacity: 0, y: -100, filter: "blur(10px)" },
-          {
-            filter: "blur(0px)",
-            opacity: 1,
-            y: 0,
-            stagger: 0.2,
-            scrollTrigger: {
-              trigger: ".stack",
-              start: "top top",
-              end: "+=" + window.innerHeight * 1.3,
-              scrub: true,
-              scroller: ".main-container",
-              markers: true,
-            },
-          }
-        );
+          pin: true,
+          onEnter: () => {
+            console.log("enter");
+            audio.play();
+          },
+        });
+        const tl = gsap.timeline();
+        tl.to(".boat", {
+          x: -800,
+          filter: "blur(4px)",
+          scrollTrigger: {
+            trigger: ".boat",
+
+            start: "top top",
+            end: "+=" + window.innerHeight * 2,
+            scroller: ".main-container",
+            scrub: true,
+          },
+        })
+          .fromTo(
+            ".dive-title1",
+            { x: 0 },
+            {
+              x: 800,
+              filter: "blur(4px)",
+              duration: 1,
+              scrollTrigger: {
+                trigger: ".dive-title1",
+                start: "top top",
+                end: "+=" + window.innerHeight * 2,
+                scrub: true,
+                scroller: ".main-container",
+                markers: true,
+              },
+            }
+          )
+          .fromTo(
+            ".stack",
+            { opacity: 0, y: -100, filter: "blur(10px)" },
+            {
+              filter: "blur(0px)",
+              opacity: 1,
+              y: 0,
+              stagger: 0.2,
+              scrollTrigger: {
+                trigger: ".stack",
+                start: "top top",
+                end: "+=" + window.innerHeight * 1.3,
+                scrub: true,
+                scroller: ".main-container",
+                markers: true,
+              },
+            }
+          );
+      });
+      return () => ctx.revert();
     }
   }, [locoScroll]);
   return (

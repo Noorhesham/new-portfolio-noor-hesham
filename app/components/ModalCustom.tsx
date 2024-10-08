@@ -11,6 +11,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 const ModalCustom = ({
   btn,
@@ -44,8 +45,8 @@ const ModalCustom = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{btn}</DialogTrigger>
-      <DialogContent className="max-w-4xl py-10 overflow-y-auto max-h-[80vh] sm:rounded-[1.8rem]">
-        {content}
+      <DialogContent className=" py-10 bg-slate-800 max-w-[90%] overflow-y-auto max-h-[80vh] w-full sm:rounded-[1.8rem]">
+        <MaxWidthWrapper noPadding>{content}</MaxWidthWrapper>
       </DialogContent>
     </Dialog>
   );

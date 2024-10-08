@@ -1,18 +1,22 @@
 import React from "react";
-import { FaBackward, FaGithub, FaLocationArrow, FaPlay } from "react-icons/fa";
+import { FaGithub, FaLocationArrow, FaPlay } from "react-icons/fa";
 import Button from "./ButtonColorful";
-import Link from "next/link";
 import SwiperCards from "./SwiperCards";
 import Image from "next/image";
+import { DialogClose } from "@/components/ui/dialog";
 
 const ProjectDescription = ({ project, moveback }: { project: any; moveback: () => void }) => {
+  console.log(project);
+
   return (
-    <div className=" text-white  h-full mb-12 mt-10 items-center justify-center  w-[80vw]" key={project.id}>
-      <Button
-        text="Back"
-        onClick={moveback}
-        className="flex hover:text-purple duration-200 absolute  w-fit items-center transition-all left-0 mb-5 3"
-      />
+    <div className=" text-white relative  h-full mb-12 mt-10 items-center justify-center  w-[80vw]" key={project.id}>
+      <DialogClose>
+        <Button
+          text="Back"
+          onClick={moveback}
+          className="flex hover:text-purple duration-200 absolute z-50 top-0 left-5  w-fit items-center transition-all mb-5 3"
+        />
+      </DialogClose>
 
       <div className=" relative flex items-center justify-center  w-[80vw] overflow-hidden   mb-10">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-3  w-full  z-10 justify-between items-center">

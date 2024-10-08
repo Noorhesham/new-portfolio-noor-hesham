@@ -6,6 +6,7 @@ import { PinContainer } from "@/components/ui/3d-pin";
 const Project = ({ project, onClick }: { project: any; onClick: () => void }) => {
   return (
     <div
+      onClick={onClick}
       className=" lg:min-h-[32.5rem]  text-white  sm:h-[35rem] h-[32rem] sm:w-[470px] items-center justify-center  w-[80vw]"
       key={project.id}
     >
