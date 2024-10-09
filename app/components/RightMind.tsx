@@ -18,12 +18,12 @@ const RightMind = () => {
         const rightmind = gsap.timeline({
           scrollTrigger: {
             trigger: ".rightmind",
-            start: "top top",
+            start: "top-100px  top",
             end: "+=1000",
             scrub: true,
             scroller: ".main-container",
             pin: ".rightmind",
-            markers: true,
+            markers: true
           },
         });
         rightmind.fromTo(

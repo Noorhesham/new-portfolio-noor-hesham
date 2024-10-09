@@ -78,7 +78,7 @@ const Space = () => {
             end: "+=" + window.innerHeight * 5,
             scrub: true,
             scroller: ".main-container",
-            pin: ".spacebg",
+            pin: ".spacebg"
           },
         });
         const tl2 = gsap.timeline({
