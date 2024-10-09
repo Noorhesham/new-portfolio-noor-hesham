@@ -265,7 +265,7 @@ const Space = () => {
       >
         <div className=" w-full gap-4 flex z-0 flex-col px-10 mt-20 py-5 absolute left-1/2 -translate-x-1/2 justify-center items-center lastdiv">
           <h1
-            className=" w-full  text-5xl text-center font-extrabold text-white absolute top-10 left-[20%] lg:left-1/2 lg:-translate-x-1/2 
+            className=" w-full  lg:w-auto text-4xl lg:text-5xl text-center font-extrabold text-white absolute top-10 left-[0%] lg:left-1/2 lg:-translate-x-1/2 
       "
           >
             WHY WOULD YOU <span className=" text-pink-500">HIRE ME ?</span>
@@ -301,13 +301,13 @@ const Space = () => {
           </span>
         </h1>{" "}
         <h1
-          className="section title2 text-5xl lg:text-7xl text-center font-extrabold z-30 text-white absolute top-72 lg:top-10 w-full left-[52%] lg:left-1/2 -translate-x-1/2  
+          className="section lg:w-auto title2 text-5xl lg:text-7xl text-center font-extrabold z-30 text-white absolute top-72 lg:top-10 w-full left-[52%] lg:left-1/2 -translate-x-1/2  
       "
         >
           <p className="char capitalize inline-block">MERN STACK </p>
           <span className="char capitalize text-pink-500">DEVELOPER with Next.js</span>
         </h1>
-        <div className="write absolute  z-30 top-52  left-[52%] lg:left-1/2 -translate-x-1/2  ">
+        <div className="write absolute  z-30 top-52  left-[30%] lg:left-1/2 -translate-x-1/2  ">
           <TypeWriter
             words={[
               "3 YEARS  AS FULL STACK WEB DEVELOPER",
