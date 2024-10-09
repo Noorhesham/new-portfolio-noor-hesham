@@ -261,7 +261,7 @@ const Ocean = () => {
   console.log(selectedProject);
   return (
     <div id="space" className="bg1  relative">
-      <h1 className=" text-7xl flex gap-1 z-20 absolute top-20  font-extrabold text-white heading1">
+      <h1 className=" text-3xl lg:text-7xl flex gap-1 z-20 absolute top-20  font-extrabold text-white heading1">
         {splitStringUsingRegex("BEST OF MY SOLO PROJECTS !").map((w) => (
           <span className="inline-block">{w}</span>
         ))}

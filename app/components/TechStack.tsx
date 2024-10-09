@@ -91,12 +91,14 @@ const TechStack = () => {
       <div className="boat z-20 w-full h-64 absolute top-40 -right-64">
         <Image alt="boat" fill src="/boat.svg" />
       </div>
-      <h1 className="text-6xl text-nowrap z-10 dive-title1 absolute w-full left-10 top-32 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500">
+      <h1 className="text-6xl text-nowrap z-10 dive-title1 absolute w-full -left-[50%] lg:block hidden lg:left-10 top-32 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500">
         SAIL INTO THE DEPTHS OF MY TECH ODYSSEY!
       </h1>
-
+      <h1 className="text-6xl text-nowrap z-10 dive-title1 absolute w-full   block  lg:hidden left-10 top-32 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-500">
+        TECHSTACK
+      </h1>
       <Bubble />
-      <div className="flex gap-1 absolute left-1/2 -translate-x-1/2 bottom-28 mt-5 lg:gap-5">
+      <div className="flex gap-1 absolute left-1/2 -translate-x-1/2 bottom-64 lg:bottom-28 mt-5 lg:gap-5">
         <div className="flex mt-5 flex-row mx-auto gap-5">
           {tech.map((item, i) => (
             <div

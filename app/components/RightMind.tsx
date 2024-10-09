@@ -82,6 +82,23 @@ const RightMind = () => {
             },
             { opacity: 1, y: 0, scale: 1, duration: 1.5, ease: "power4.out", x: 0 },
             "<-"
+          )
+          .fromTo(
+            ".headline5",
+            {
+              opacity: 0,
+              y: 50,
+              scale: 0.8,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 1.5,
+              ease: "power4.out",
+              stagger: 0.2,
+            },
+            "<-"
           );
       });
 
@@ -108,8 +125,8 @@ const RightMind = () => {
             </p>
           ))}
         </h1>
-        <div className=" flex items-center gap-5">
-          <Link href={"https://rightminddev.com/"} className="logoright w-full h-40  z-50 flex-1   relative ">
+        <div className=" flex lg:flex-row flex-col items-center gap-5">
+          <Link href={"https://rightminddev.com/"} className="logoright min-w-96 w-full h-40  z-50    relative ">
             <Image alt="rightmind" className=" object-contain" fill src={"/logo.png"} />
           </Link>
           <div className="  w-full flex-1 text-center headline m-auto text-6xl text-white font-extrabold ">
@@ -117,7 +134,10 @@ const RightMind = () => {
           </div>
         </div>
       </MaxWidthWrapper>{" "}
-      <MaxWidthWrapper className=" left-1/2 -translate-x-1/2 absolute top-10 z-40  meteors">
+      <div className="  w-full flex-1 top-10 absolute text-center headline5 m-auto text-6xl text-white font-extrabold ">
+        SOME OF MY<span className=" text-pink-500"> FREELANCING PROJECTS</span>
+      </div>
+      <MaxWidthWrapper className=" left-[60%] lg:left-1/2 -translate-x-1/2 absolute top-[30%]   lg:top-24 z-40  meteors">
         <SwiperCards
           autoplay={true}
           items={JOBS.map((job, i) => {

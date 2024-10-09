@@ -75,7 +75,7 @@ const Space = () => {
           scrollTrigger: {
             trigger: ".spacebg",
             start: "top top",
-            end: window.innerWidth >> 768 ? "+=" + window.innerHeight * 5 : "+=" + window.innerHeight * 3,
+            end: window.innerWidth > 768 ? "+=" + window.innerHeight * 5 : "+=" + window.innerHeight * 3.5,
             scrub: true,
             scroller: ".main-container",
             pin: ".spacebg",

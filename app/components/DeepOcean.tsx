@@ -14,7 +14,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DeepOcean = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(projects.length / 3);
+  const [totalPages, setTotalPages] = useState(Math.ceil(projects.length / 3));
+
   const { locoScroll } = useSmoothScroll();
   const [isClicked, setIsClicked] = useState(false);
   function contactAnimation() {
@@ -22,6 +23,12 @@ const DeepOcean = () => {
     gsap.fromTo(".contact", { y: 100, opacity: 0 }, { y: 0, opacity: 1 });
   }
   useEffect(() => {
+    const updatePages = () => {
+      const itemsPerPage = window.innerWidth <= 768 ? 2 : 3; // 2 projects on phones, 3 on larger screens
+      setTotalPages(Math.ceil(projects.length / itemsPerPage));
+    };
+    const totalPages = Math.ceil(projects.length / 3);
+
     if (locoScroll) {
       const ctx = gsap.context(() => {
         const tl = gsap.timeline({
@@ -94,7 +101,7 @@ const DeepOcean = () => {
   return (
     <section className="deepocean  relative w-full">
       <div className="absolute h-full inset-0 w-full">
-        <AnimatedImage className=" w-full h-full" data="bgocean.json" />
+        <AnimatedImage className=" w-full h-screen" data="bgocean.json" />
       </div>
       <MaxWidthWrapper className=" z-50 relative paginations">
         <PaginatedProjects currentPage={currentPage} setCurrentPage={setCurrentPage} projects={projects} />

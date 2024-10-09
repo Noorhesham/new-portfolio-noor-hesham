@@ -100,7 +100,7 @@ const Snow = () => {
           content={<CopyEmail />}
         />
 
-        <div className="noor opacity-0 bottom-20 right-20  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">
+        <div className="noor opacity-0 bottom-96 lg:bottom-20 -right-2 lg:right-20  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">
           <Image src="/noor.jpg" className=" object-cover w-full h-full" alt="ground" fill />
         </div>
         <div className="tree opacity-0 -bottom-4 right-16  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">

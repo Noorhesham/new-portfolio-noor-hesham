@@ -88,10 +88,10 @@ const Logo = () => {
   }, []);
 
   return (
-    <div className=" overflow-hidden  relative flex  max-h-screen items-center w-full justify-center">
+    <div className=" overflow-hidden h-screen  bg-black  relative flex  max-h-screen items-center w-full justify-center">
       {" "}
-      <div className="reveal w-full bg-black absolute h-full backdrop:blur-sm"></div>
-      <svg className=" z-50 w-[20vw] overflow-visible" viewBox="0 0 800 800" width="800" height="800">
+      <div className="reveal w-full absolute h-full backdrop:blur-sm"></div>
+      <svg className=" z-50 w-[60vw] lg:w-[20vw] overflow-visible" viewBox="0 0 800 800" width="800" height="800">
         <defs>
           <image
             width="1200"
