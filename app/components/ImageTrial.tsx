@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 
 // Array of image sources to be used for animations
-const images = ["/c1.jpg", "/c2.jpg", "/c3.jpg", "/c4.jpg", "/cs50.png"];
 
 // Throttle function to limit the rate at which a function can fire.
 const throttle = (func: Function, limit: number) => {
@@ -16,8 +15,9 @@ const throttle = (func: Function, limit: number) => {
     }
   };
 };
+// const images = ["/c1.jpg", "/c2.jpg", "/c3.jpg", "/c4.jpg", "/cs50.png"];
 
-const ImageTrial: React.FC = () => {
+const ImageTrial: React.FC = ({ images }: { images: string[] }) => {
   // Reference to the hero container div
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -84,7 +84,7 @@ const ImageTrial: React.FC = () => {
   useEffect(() => {
     // Throttled mousemove handler
     const throttledMouseMove = throttle((event: MouseEvent) => {
-        console.log(event)
+      console.log(event);
       if (!isEnabledRef.current) {
         isEnabledRef.current = true;
         animateImages(event);

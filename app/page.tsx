@@ -7,14 +7,15 @@ import Journey from "./components/Journey";
 import TechStack from "./components/TechStack";
 import Ocean from "./components/Ocean";
 import DeepOcean from "./components/DeepOcean";
+import RightMind from "./components/RightMind";
 
 function Page() {
   return (
     <section className="main-container stickysection ">
       <Space />
+      <RightMind />
       <Snow />
       <ScrollX />
-      <ImageTrial />
       <Journey />
       <TechStack />
       <Ocean />

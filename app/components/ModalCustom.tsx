@@ -26,6 +26,7 @@ const ModalCustom = ({
   isPending,
   btnStyles,
   form,
+  small,
 }: {
   btn: React.ReactNode;
   content: React.ReactNode;
@@ -39,15 +40,22 @@ const ModalCustom = ({
   isPending?: boolean;
   btnStyles?: boolean;
   form?: boolean;
+  small?: boolean;
 }) => {
   const [open, setOpen] = React.useState(isOpen || false);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{btn}</DialogTrigger>
-      <DialogContent className=" py-10 bg-slate-800 max-w-[90%] overflow-y-auto max-h-[80vh] w-full sm:rounded-[1.8rem]">
-        <MaxWidthWrapper noPadding>{content}</MaxWidthWrapper>
-      </DialogContent>
+      {small ? (
+        <DialogContent className=" py-10 overflow-hidden bg-slate-800 max-w-2xl overflow-y-auto max-h-[80vh] w-full sm:rounded-[1.8rem]">
+          <MaxWidthWrapper noPadding>{content}</MaxWidthWrapper>
+        </DialogContent>
+      ) : (
+        <DialogContent className=" py-10 bg-slate-800 max-w-[90%] overflow-y-auto max-h-[80vh] w-full sm:rounded-[1.8rem]">
+          <MaxWidthWrapper noPadding>{content}</MaxWidthWrapper>
+        </DialogContent>
+      )}
     </Dialog>
   );
 };

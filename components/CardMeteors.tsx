@@ -24,7 +24,7 @@ const CardMeteors = ({ job }: { job: any }) => {
 
           <div className="flex-grow">
             <div className="text-xl font-bold text-neutral-600 dark:text-white">{job.title}</div>
-            <p className="text-neutral-500 text-sm mt-2 dark:text-neutral-300">{job.des}</p>
+            <p className="text-neutral-500 text-sm mt-2 line-clamp-5 dark:text-neutral-300">{job.des}</p>
           </div>
           {job.link ? (
             <Link href={job.link} className="h-36 relative w-full  mt-4">

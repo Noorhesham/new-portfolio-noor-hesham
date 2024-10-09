@@ -31,7 +31,6 @@ const Ocean = () => {
           scroller: ".main-container",
           scrub: true,
           pin: ".bg1",
-          markers: true,
         });
 
         const tl = gsap.timeline();
@@ -104,7 +103,7 @@ const Ocean = () => {
 
               scrollTrigger: {
                 trigger: ".project-2",
-                start:"+=" +  window.innerHeight * 2.3, // Matches timing with Project 1 exit
+                start: "+=" + window.innerHeight * 2.3, // Matches timing with Project 1 exit
                 end: "+=" + window.innerHeight * 2, // Adjusted to match Project 1 timing
                 scrub: true,
                 scroller: ".main-container",
@@ -116,7 +115,7 @@ const Ocean = () => {
             y: -200,
             scrollTrigger: {
               trigger: ".project-2",
-              start:"+=" +  window.innerHeight * 2.3, // Matches timing with Project 1 exit
+              start: "+=" + window.innerHeight * 2.3, // Matches timing with Project 1 exit
               end: "+=" + window.innerHeight * 2, // Adjusted to match Project 1 timing
               scrub: true,
               scroller: ".main-container",
@@ -131,7 +130,7 @@ const Ocean = () => {
               opacity: 0,
               scrollTrigger: {
                 trigger: ".project-2",
-                start:"+=" +  window.innerHeight * 2.3,
+                start: "+=" + window.innerHeight * 2.3,
                 end: "+=" + window.innerHeight * 2, // Same end value to align with Project 2
                 scrub: true,
                 scroller: ".main-container",
@@ -149,7 +148,7 @@ const Ocean = () => {
 
               scrollTrigger: {
                 trigger: ".project-3",
-                start:"+=" +  window.innerHeight * 3.7, // Synchronized with Project 2 exit
+                start: "+=" + window.innerHeight * 3.7, // Synchronized with Project 2 exit
                 end: "+=" + window.innerHeight * 2.3, // Adjusted to match the same scroll distance
                 scrub: true,
                 scroller: ".main-container",
@@ -165,7 +164,7 @@ const Ocean = () => {
               opacity: 0,
               scrollTrigger: {
                 trigger: ".project-3",
-                start:"+=" +  window.innerHeight * 3.7,
+                start: "+=" + window.innerHeight * 3.7,
                 end: "+=" + window.innerHeight * 2, // Aligned to match Project 3 entrance
                 scrub: true,
                 scroller: ".main-container",
@@ -182,7 +181,7 @@ const Ocean = () => {
 
               scrollTrigger: {
                 trigger: ".project-4",
-                start:"+=" +  window.innerHeight * 4.8, // Adjusted to match with Project 3 exit
+                start: "+=" + window.innerHeight * 4.8, // Adjusted to match with Project 3 exit
                 end: "+=" + window.innerHeight * 2, // Keep consistent timing
                 scrub: true,
                 scroller: ".main-container",
@@ -197,7 +196,7 @@ const Ocean = () => {
               y: -600,
               scrollTrigger: {
                 trigger: ".project-4",
-                start:"+=" +  window.innerHeight * 5.4,
+                start: "+=" + window.innerHeight * 5.4,
                 end: "+=" + window.innerHeight * 2,
                 scrub: true,
                 scroller: ".main-container",
@@ -212,7 +211,7 @@ const Ocean = () => {
               y: -600,
               scrollTrigger: {
                 trigger: ".project-4",
-                start:"+=" +  window.innerHeight * 6.4,
+                start: "+=" + window.innerHeight * 6.4,
                 end: "+=" + window.innerHeight * 2,
                 scrub: true,
                 scroller: ".main-container",
@@ -228,7 +227,7 @@ const Ocean = () => {
               display: "block",
               scrollTrigger: {
                 trigger: ".bg2",
-                start:"+=" +  window.innerHeight * 6.4,
+                start: "+=" + window.innerHeight * 6.4,
                 end: "+=" + window.innerHeight * 3,
                 scrub: true,
                 scroller: ".main-container",
@@ -244,7 +243,7 @@ const Ocean = () => {
               opacity: 1,
               scrollTrigger: {
                 trigger: ".bg2",
-                start:"+=" +  window.innerHeight * 6.4,
+                start: "+=" + window.innerHeight * 6.4,
                 end: "+=" + window.innerHeight * 3,
                 scrub: true,
                 scroller: ".main-container",
@@ -261,7 +260,7 @@ const Ocean = () => {
   }, [locoScroll]);
   console.log(selectedProject);
   return (
-    <div className="bg1  relative">
+    <div id="space" className="bg1  relative">
       <h1 className=" text-7xl flex gap-1 z-20 absolute top-20  font-extrabold text-white heading1">
         {splitStringUsingRegex("BEST OF MY SOLO PROJECTS !").map((w) => (
           <span className="inline-block">{w}</span>
@@ -294,7 +293,7 @@ const Ocean = () => {
                 </div>
               }
               key={project.id}
-              content={<ProjectDescription moveback={() => {}} project={selectedProject} />}
+              content={<ProjectDescription  moveback={() => {}} project={selectedProject} />}
             />
           );
         })}

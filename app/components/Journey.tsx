@@ -42,7 +42,6 @@ const Journey = () => {
               end: "+=" + window.innerHeight * 2,
               scrub: true,
               scroller: ".main-container",
-              markers: true,
             },
           }
         )
@@ -58,7 +57,6 @@ const Journey = () => {
               end: "+=" + window.innerHeight * 2,
               scrub: true,
               scroller: ".main-container",
-              markers: true,
             },
           }
         )
@@ -74,7 +72,6 @@ const Journey = () => {
               end: "+=" + window.innerHeight * 3,
               scrub: true,
               scroller: ".main-container",
-              markers: true,
             },
           }
         )
@@ -90,7 +87,6 @@ const Journey = () => {
               end: "+=" + window.innerHeight * 2,
               scrub: true,
               scroller: ".main-container",
-              markers: true,
             },
           }
         );

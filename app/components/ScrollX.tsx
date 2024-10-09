@@ -9,6 +9,8 @@ import { splitStringUsingRegex } from "@/lib/utils";
 import RightMind from "./RightMind";
 import FlexContainer from "./FlexContainer";
 import AnimatedImage from "./AnimatedImage";
+import ImageTrial from "./ImageTrial";
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const ScrollX = () => {
@@ -22,7 +24,7 @@ const ScrollX = () => {
           scrollTrigger: {
             trigger: ".cs50",
             start: "top top",
-            end: () => "+=1000",
+            end: () => (window.innerWidth < 768 ? "+=200" : "+=1000"),
             scrub: 1,
             scroller: ".main-container",
             pinSpacing: true,
@@ -39,7 +41,6 @@ const ScrollX = () => {
             { clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)" },
             { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }
           )
-          .fromTo(".cs50 .line", { width: 0 }, { width: "150px", duration: 0.5 })
           .fromTo(".cs50 p", { opacity: 0, rotateX: -90, y: -50 }, { opacity: 1, rotateX: 0, y: 0, stagger: 0.1 })
           .fromTo(
             ".csimg",
@@ -61,7 +62,6 @@ const ScrollX = () => {
             onUpdate: (self) => {
               setActiveSectionIndex(Math.round(self.progress * (sections.length - 1) + 2));
             },
-            markers: true,
           },
         });
         const stops = [];
@@ -94,9 +94,9 @@ const ScrollX = () => {
               },
               "<"
             )
-            .fromTo(
+            .to(
               ".line",
-              { width: 0 },
+
               {
                 width: "150px",
 
@@ -126,76 +126,28 @@ const ScrollX = () => {
               duration: sections.length - stop,
             });
           }
-          // sections.forEach((section, index) => {
-          //   const tl = gsap.timeline({
-          //     scrollTrigger: {
-          //       trigger: section,
-          //       scrub: 1,
-          //       start: window.innerWidth * activeSectionIndex,
-          //       end: () => "+=" + window.innerWidth * activeSectionIndex,
-          //       scroller: ".main-container",
-          //       pinSpacing: true,
-          //       markers: true,
-          //     },
-          //   });
-          //   tl.fromTo(
-          //     ".line",
-          //     { width: 0 },
-          //     {
-          //       width: "150px",
-
-          //       duration: 0.5,
-          //     }
-          //   )
-          //     .fromTo(
-          //       `.sectionimg`,
-          //       { clipPath: "polygon(0 0, 0 0, 0 100%, 0 100%)", x: 400, ease: "none" },
-          //       {
-          //         x: 0,
-          //         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-          //         ease: "power1.inOut",
-          //       }
-          //     )
-          //     .from(
-          //       ".sectiontypo",
-          //       {
-          //         opacity: 0,
-          //         duration: 0.5,
-          //         rotateX: -90,
-          //         y: -50,
-          //       },
-          //       "<"
-          //     );
-          // });
         });
-        // tl.to(sections, { xPercent: -100 * (sections.length - 1), ease: "none" });
       });
       return () => ctx.revert();
     }
   }, [locoScroll]);
   return (
     <section className="">
-      <main className=" w-[410vw] relative h-screen flex  justify-center xsection">
+      <main className=" w-[510vw] relative h-screen flex  justify-center xsection">
         <section data-pin="true" className="h-screen relative mx-auto z-20 text-left cs50   w-full">
-          <MaxWidthWrapper className="flex   translate-y-24 m-auto md:flex-row flex-col  justify-center items-center">
-            <div className=" absolute mt-20 csimg   flex-1  top-1/2   rotate-6  right-40 w-96 h-96">
+          <MaxWidthWrapper className="flex    translate-y-24 m-auto md:flex-row flex-col  justify-center items-center">
+            <div className=" absolute lg:mt-20 csimg  z-20  flex-1  top-[130%]  lg:top-1/2   rotate-6  right-[30%] lg:right-40 w-64 h-64 md:w-96 md:h-96">
               <Image src="/cs50.png" className=" object-contain" alt="CS50 Journey" fill />
             </div>
-            <div className=" absolute csimg2  -right-20  flex-1 w-96 h-96">
+            <div className=" absolute csimg2  lg:-right-2 lg:top-0  top-[95%] flex-1 w-64 h-64 md:w-96 md:h-96">
               <Image src="/david.jpg" className=" object-contain" alt="CS50 Journey" fill />
             </div>
 
             <div className=" flex max-w-2xl mr-auto text-left flex-col flex-1 ">
               <div className=" flex flex-col  gap-2">
-                <div
-                  className={`${
-                    activeSectionIndex === 0 ? "text-sky-400" : "text-black"
-                  } duration-150 relative flex items-center flex-row  gap-1  text-base `}
-                >
+                <div className={`duration-150 relative flex items-center flex-row  gap-1  text-base `}>
                   01
-                  <span
-                    className={`line  my-auto mx-2 ${activeSectionIndex === 0 ? "bg-sky-400" : "bg-black"}   h-[2px] `}
-                  ></span>
+                  <span className={`line  my-auto mx-2  bg-black   h-[2px] `}></span>
                   MY START
                 </div>
                 <h1 className="text-5xl  font-extrabold">The Great CS50 Quest 🎓</h1>
@@ -210,7 +162,7 @@ const ScrollX = () => {
             </div>
           </MaxWidthWrapper>
         </section>
-        <section data-pin="true" className={`  h-full flex items-start  min-h-[120vh]  w-full `}>
+        <section data-pin="true" className={`  h-full flex items-start   min-h-[100vh] w-full `}>
           {/* <RightMind /> */}
           <FlexContainer className=" w-full  h-full relative  bg-white">
             <div className=" h-full   clippy    absolute w-[100vw]  left-0  top-0">
@@ -218,19 +170,11 @@ const ScrollX = () => {
             </div>
             <div className=" flex-col sectiontypo gap-4 flex items-start text-left mt-4">
               <div className=" flex flex-col  gap-2">
-                <div
-                  className={`${
-                    activeSectionIndex === 2 ? "text-sky-400" : "text-black"
-                  } duration-150 relative flex items-center flex-row gap-1  text-base `}
-                >
+                <div className={`duration-150 relative flex items-center flex-row gap-1  text-base `}>
                   <span className=" circle w-fit rounded-full "> 02</span>
-                  <span
-                    className={` ${
-                      activeSectionIndex === 2 ? "bg-sky-400" : "bg-black"
-                    } line w-0  my-auto mx-2   h-[2px] `}
-                  ></span>
+                  <span className={` line bg-black  my-auto mx-2   h-[2px] `}></span>
                   FRONTEND
-                </div>
+                </div>{" "}
                 <h1 className="text-5xl  font-bold">Frontend Alchemy with JavaScript & React 🚀</h1>
               </div>
               <p className="text-lg max-w-2xl">
@@ -243,23 +187,30 @@ const ScrollX = () => {
               <AnimatedImage className=" w-full  h-full" data="animate5.json" />
             </div>
           </FlexContainer>
+          <div className=" w-full h-full absolute">
+            <ImageTrial
+              images={[
+                "/gaming.png",
+                "/Screenshot (212).png",
+                "/Screenshot (195).png",
+                "/shady.png",
+                "/QuizBoi.png",
+                "/Screenshot (49).png",
+                "/Screenshot (206).png",
+                "/Screenshot (243).png",
+                "/Screenshot 2024-08-23 070813.png",
+                "/Screenshot 2024-09-24 142729.png",
+              ]}
+            />
+          </div>
         </section>
-        <section data-pin="true" className={`  h-full flex items-start  min-h-[120vh]  w-full `}>
-          {/* <RightMind /> */}
+        <section data-pin="true" className={`  h-full flex items-start  min-h-[100vh]  w-full `}>
           <FlexContainer className=" w-full  h-full relative  bg-white">
             <div className=" flex-col sectiontypo gap-4 flex items-start text-left mt-4">
               <div className=" flex flex-col  gap-2">
-                <div
-                  className={`${
-                    activeSectionIndex === 3 ? "text-sky-400" : "text-black"
-                  } duration-150 relative flex items-center flex-row gap-1  text-base `}
-                >
+                <div className={`duration-150 relative flex items-center flex-row gap-1  text-base `}>
                   <span className=" circle w-fit rounded-full "> 3</span>
-                  <span
-                    className={` ${
-                      activeSectionIndex === 3 ? "bg-sky-400" : "bg-black"
-                    } line w-0  my-auto mx-2   h-[2px] `}
-                  ></span>
+                  <span className={` line bg-black  my-auto mx-2   h-[2px] `}></span>
                   BACKEND
                 </div>
                 <h1 className="text-5xl  font-bold">Backend Brilliance with Node.js & Full-Stack Mastery 🌐</h1>
@@ -276,7 +227,49 @@ const ScrollX = () => {
             </div>
           </FlexContainer>
         </section>
-        <section className=" h-screen   w-full "></section>
+        <section data-pin="true" className={`  h-full flex items-start  min-h-[100vh]  w-full `}>
+          <FlexContainer className=" w-full  h-full relative  bg-white">
+            <div className=" flex-col sectiontypo gap-4 flex items-start text-left mt-4">
+              <div className=" flex flex-col  gap-2">
+                <div className={`duration-150 relative flex items-center flex-row gap-1  text-base `}>
+                  <span className=" circle w-fit rounded-full "> 4</span>
+                  <span className={` line bg-black  my-auto mx-2   h-[2px] `}></span>
+                  FREELANCING AT WEEKENDS
+                </div>
+                <h1 className="text-4xl  font-bold">Weekend Freelancing Hustle 💼</h1>
+              </div>
+              <p className="text-lg max-w-2xl">
+                With skills sharpened, I dove into freelancing on the weekends. Each project brought new challenges and
+                triumphs, and nothing felt better than delivering powerful, polished websites to happy clients. 🏆
+              </p>
+            </div>
+            <div className="relative w-full h-fit sectionimg  lg:-mt-40 ml-auto   ">
+              <AnimatedImage className=" w-full  h-full" data="animate8.json" />
+            </div>
+          </FlexContainer>
+        </section>
+        <section data-pin="true" className={`  h-full flex items-start  min-h-[100vh]  w-full `}>
+          <FlexContainer className=" w-full  h-full relative  bg-white">
+            <div className=" flex-col gap-2 sectiontypo gap-4 flex items-start text-left mt-4">
+              <div className=" flex flex-col  gap-2">
+                <div className={`duration-150 relative flex items-center flex-row gap-1  text-base `}>
+                  <span className=" circle w-fit rounded-full "> 5</span>
+                  <span className={` line bg-black  my-auto mx-2   h-[2px] `}></span>
+                  ANIMING TO BE THE BEST
+                </div>
+                <h1 className="text-5xl  font-bold">Diving Deeper: Next.js, 3D, and GSAP 🛠️</h1>
+              </div>
+              <p className="text-lg max-w-2xl">
+                Now, I'm pushing boundaries with Next.js, diving into 3D animations with Three.js, and bringing my web
+                creations to life using GSAP. It's a constant learning adventure, and I'm loving every moment of
+                mastering new tools. 🚀
+              </p>
+            </div>
+            <div className="relative w-full h-fit sectionimg lg:mt-0 mt-20  ml-auto   ">
+              <AnimatedImage className=" w-full  h-full" data="coffe.json" />
+            </div>
+          </FlexContainer>
+        </section>
       </main>
     </section>
   );

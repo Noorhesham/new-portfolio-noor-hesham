@@ -53,7 +53,6 @@ const TechStack = () => {
                 end: "+=" + window.innerHeight * 2,
                 scrub: true,
                 scroller: ".main-container",
-                markers: true,
               },
             }
           )
@@ -71,7 +70,6 @@ const TechStack = () => {
                 end: "+=" + window.innerHeight * 1.3,
                 scrub: true,
                 scroller: ".main-container",
-                markers: true,
               },
             }
           );

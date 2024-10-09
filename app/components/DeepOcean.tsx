@@ -21,7 +21,7 @@ const DeepOcean = () => {
   });
   return (
     <section className="deepocean h-screen  relative w-full">
-      <div className="absolute inset-0 w-full">
+      <div className="absolute h-full inset-0 w-full">
         <AnimatedImage className=" w-full h-full" data="bgocean.json" />
       </div>
     </section>

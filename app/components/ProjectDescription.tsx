@@ -21,7 +21,15 @@ const ProjectDescription = ({ project, moveback }: { project: any; moveback: () 
       <div className=" relative flex items-center justify-center  w-[80vw] overflow-hidden   mb-10">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-3  w-full  z-10 justify-between items-center">
           {Array.isArray(project.img) ? (
-            <SwiperCards autoplay items={[...project.img]} />
+            <SwiperCards
+              slidesPerView={1}
+              autoplay
+              items={[
+                project.img.map((img) => {
+                  return { src: img };
+                }),
+              ]}
+            />
           ) : (
             <div className=" min-h-80 w-full h-full relative">
               {" "}

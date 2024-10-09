@@ -2,20 +2,12 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import gsap from "gsap";
-import { MotionPathHelper, MotionPathPlugin, ScrollTrigger } from "gsap/all";
+import { MotionPathPlugin, ScrollTrigger } from "gsap/all";
 import { useSmoothScroll } from "../context/SmoothScrollProvider";
 import { splitStringUsingRegex } from "@/lib/utils";
 import TypeWriter from "./TypeWriter";
 import AnimatedImage from "./AnimatedImage";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import Link from "next/link";
-import SwiperCards from "./SwiperCards";
-import { JOBS } from "@/constants";
-import CardMeteors from "@/components/CardMeteors";
-// STARTED BY CS 50 WITH A LONG JOURNY OF STUDY
-// CRRUNTLY OWRKING AS FRONTEND AT RIGHTMIND
-// YOUTUBE CHANNEL DEEP DIVES INTO NEXT JS
-// FREELANCING IN WEEK ENDS
+
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 const Space = () => {
   const { locoScroll } = useSmoothScroll();
@@ -78,6 +70,7 @@ const Space = () => {
           );
 
         //pinning
+        gsap.to(".earth", { rotation: "360", duration: 20, ease: "none", repeat: -1 });
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: ".spacebg",
@@ -91,10 +84,10 @@ const Space = () => {
         const tl2 = gsap.timeline({
           scrollTrigger: {
             trigger: ".spacebg",
-            start: window.innerHeight - 300,
+            start: window.innerHeight * 0.25,
             end: "+=" + window.innerHeight * 3,
             scrub: true,
-
+            markers: true,
             scroller: ".main-container",
           },
         });
@@ -211,6 +204,7 @@ const Space = () => {
         tllast
           .to(".earth", {
             y: 900,
+            opacity: 0,
             scrollTrigger: {
               trigger: ".earth",
               start: window.innerHeight * 3,
@@ -222,6 +216,7 @@ const Space = () => {
           })
           .to(".planet", {
             y: 600,
+            opacity: 0,
             scrollTrigger: {
               trigger: ".planet",
               start: window.innerHeight * 3.2,
@@ -241,15 +236,14 @@ const Space = () => {
             scroller: ".main-container",
           },
         });
-        tll
-          .fromTo(
-            ".boi",
-            { y: -150 },
-            {
-              y: 300,
-            }
-          )
-          .to(".mountain", { y: 400 });
+        tll.fromTo(
+          ".boi",
+          { y: -150 },
+          {
+            y: 300,
+          }
+        );
+        tll.fromTo(".mountain", { y: 400 }, { y: 800 });
       });
 
       return () => ctx.revert();
@@ -269,9 +263,9 @@ const Space = () => {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className=" w-full gap-4 flex z-30 flex-col px-10 mt-20 py-5 absolute left-1/2 -translate-x-1/2 justify-center items-center lastdiv">
+        <div className=" w-full gap-4 flex z-0 flex-col px-10 mt-20 py-5 absolute left-1/2 -translate-x-1/2 justify-center items-center lastdiv">
           <h1
-            className="  text-5xl text-center font-extrabold text-white absolute top-10 left-1/2 -translate-x-1/2 
+            className=" w-full  text-5xl text-center font-extrabold text-white absolute top-10 left-[20%] lg:left-1/2 lg:-translate-x-1/2 
       "
           >
             WHY WOULD YOU <span className=" text-pink-500">HIRE ME ?</span>
@@ -307,13 +301,13 @@ const Space = () => {
           </span>
         </h1>{" "}
         <h1
-          className="section title2 text-5xl lg:text-7xl text-center font-extrabold z-30 text-white absolute top-72 lg:top-10 left-1/2 -translate-x-1/2  
+          className="section title2 text-5xl lg:text-7xl text-center font-extrabold z-30 text-white absolute top-72 lg:top-10 w-full left-[52%] lg:left-1/2 -translate-x-1/2  
       "
         >
           <p className="char capitalize inline-block">MERN STACK </p>
           <span className="char capitalize text-pink-500">DEVELOPER with Next.js</span>
         </h1>
-        <div className="write absolute  z-30 top-52 left-1/2 -translate-x-1/2 ">
+        <div className="write absolute  z-30 top-52  left-[52%] lg:left-1/2 -translate-x-1/2  ">
           <TypeWriter
             words={[
               "3 YEARS  AS FULL STACK WEB DEVELOPER",
