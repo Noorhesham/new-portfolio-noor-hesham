@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "locomotive-scroll/src/locomotive-scroll.scss";
 import { SmoothScrollProvider } from "./context/SmoothScrollProvider";
+import { LoaderProvider } from "./context/LoaderProvider";
+import ContactMe from "./components/ContactMe";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,10 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} light dark:bg-white antialiased`}>
-        <SmoothScrollProvider>
-          <main>{children}</main>
-        </SmoothScrollProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable}  dark`}>
+        <LoaderProvider>
+          <SmoothScrollProvider>
+            <ContactMe />
+            <main className="main-container">{children}</main>
+          </SmoothScrollProvider>
+        </LoaderProvider>
       </body>
     </html>
   );

@@ -23,7 +23,7 @@ const Ocean = () => {
   useEffect(() => {
     if (locoScroll) {
       const ctx = gsap.context(() => {
-        gsap.set(".bg1", { scale: 1.4 });
+        gsap.set(".ocean", { scale: 1.4 });
         ScrollTrigger.create({
           trigger: ".bg1",
           start: "top top",
@@ -32,16 +32,16 @@ const Ocean = () => {
           scrub: true,
           pin: ".bg1",
         });
-
+        gsap.set(".bg2", { scale: 1.4 });
         const tl = gsap.timeline();
 
         //enterance for 1st project
         // Entrance for Project 1
         tl.fromTo(
-          ".bg1",
+          ".ocean",
           { scale: 1.4 },
           {
-            scale: 1,
+            scale: 1.02,
             scrollTrigger: {
               trigger: ".bg1",
               start: "top top",
@@ -266,7 +266,7 @@ const Ocean = () => {
           <span className="inline-block">{w}</span>
         ))}
       </h1>
-      <div className="  absolute inset-0 w-full h-screen">
+      <div className=" ocean absolute inset-0 w-full h-[100vh]">
         <Image src="/ocean.svg" className=" object-cover" alt="ocean" fill />
       </div>
       <>

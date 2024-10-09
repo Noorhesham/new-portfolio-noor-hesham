@@ -15,7 +15,7 @@ const Journey = () => {
         end: "+=" + window.innerHeight * 2,
         scroller: ".main-container",
         scrub: true,
-        pin: true,
+        pin: ".journy",
       });
       const tl = gsap.timeline();
       tl.fromTo(
@@ -32,7 +32,7 @@ const Journey = () => {
           ".car",
           { scale: 1, x: 0, y: 0 },
           {
-            scale: 0.3,
+            scale: 0.6,
 
             x: 100,
             duration: 1,
@@ -45,6 +45,17 @@ const Journey = () => {
             },
           }
         )
+        .to(".car", {
+          x: 150,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".car",
+            start: "top top",
+            end: "+=" + window.innerHeight * 2.2,
+            scrub: true,
+            scroller: ".main-container",
+          },
+        })
         .fromTo(
           ".dive-title",
           { x: 0 },

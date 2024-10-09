@@ -96,7 +96,7 @@ const TechStack = () => {
       </h1>
 
       <Bubble />
-      <div className="flex gap-1 absolute left-1/2 -translate-x-1/2 bottom-10 mt-5 lg:gap-5">
+      <div className="flex gap-1 absolute left-1/2 -translate-x-1/2 bottom-28 mt-5 lg:gap-5">
         <div className="flex mt-5 flex-row mx-auto gap-5">
           {tech.map((item, i) => (
             <div

@@ -23,7 +23,6 @@ const RightMind = () => {
             scrub: true,
             scroller: ".main-container",
             pin: ".rightmind",
-            markers: true
           },
         });
         rightmind.fromTo(

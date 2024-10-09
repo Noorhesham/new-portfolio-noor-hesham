@@ -49,7 +49,7 @@ const useLocoScroll = () => {
     setLocoScroll(locoScrollInstance);
 
     const lsUpdate = () => locoScrollInstance.update();
-    ScrollTrigger.normalizeScroll(true);
+    if (window.innerWidth < 768) ScrollTrigger.normalizeScroll(true);
     ScrollTrigger.addEventListener("refresh", lsUpdate);
     ScrollTrigger.refresh();
     // Cleanup on component unmount

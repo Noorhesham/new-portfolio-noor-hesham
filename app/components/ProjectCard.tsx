@@ -12,14 +12,14 @@ const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ stiffness: 0.3, duration: 1 }}
     >
-      <CardContainer className="inter-var h-full relative ">
+      <CardContainer className="inter-var w-full h-full relative ">
         <CardBody className="bg-gray-50 flex flex-col  relative group/card h-full   dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto   rounded-xl p-6 border  ">
           <div className="flex flex-col  self-stretch flex-auto">
             <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
               {project.title}
             </CardItem>
-            <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-              {project.des.split(" ").slice(1, 13).join(" ")}{" "}
+            <CardItem as="p" translateZ="60" className="text-neutral-500 line-clamp-2 text-sm max-w-sm mt-2 dark:text-neutral-300">
+              {project.des}{" "}
               <span className="  text-base  text-purple hover:text-purple-500 duration-200">Read More ...</span>
             </CardItem>
           </div>

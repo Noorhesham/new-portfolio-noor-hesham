@@ -92,7 +92,7 @@ export const gridItems = [
 export const projects = [
   {
     id: 154,
-    title: "Shinopi Store | Next.js Mern E commerce Project",
+    title: "Shinopi Store|Next.js+Mern E-commerce",
     des: `I'm thrilled to share the biggest project of my career with you all: **Shinobi Store**! 🎉
   
   Check out my latest video where I introduce Shinobi Store, an innovative e-commerce platform that’s like Amazon meeting Naruto. Believe it! 👀📹
@@ -157,7 +157,7 @@ export const projects = [
   },
   {
     id: 1,
-    title: "Quiz Boi | Next.js Mern Project",
+    title: "Quiz Boi | Next.js Mern ",
     des: `upload quizzes, add questions, solve quizzes with data persistence , implemented cheat prevention mechanisms(timers,etc). dynamic homepage showcasing featured quizzes, user authentication,
       leaderboard functionalities, and social interactions including following, commenting, and likes.`,
     img: "/QuizBoi.png",
@@ -179,7 +179,7 @@ export const projects = [
   },
   {
     id: 123123,
-    title: "Elshady | Next.js TypeScript Project",
+    title: "Elshady | Next.js TypeScript ",
     des: `I developed a dynamic Learning Management System (LMS) using TypeScript and Next.js, enhanced with animations powered by Framer Motion. The platform features essential functionalities like user authentication with login and signup processes, as well as comprehensive CRUD operations for managing course content. Users can engage with quizzes and videos while tracking their progress, with restrictions in place to ensure a secure learning environment. Additionally, the system includes a leaderboard to showcase top students, fostering a sense of competition and motivation among learners. This project not only showcases my technical skills but also emphasizes the importance of user experience through smooth animations and interactive design. Collaborating with the backend team allowed me to develop the LMS as a full-stack application, ensuring seamless integration and efficient data management throughout the platform. `,
     img: ["/shady.png", "/Screenshot 2024-09-04 163501.png", "/Screenshot 2024-09-01 070302.png"],
     gen: "Next",

@@ -78,7 +78,7 @@ const Snow = () => {
           backgroundRepeat: "no-repeat",
           backgroundImage: "url('/snowbg.svg')",
         }}
-        className="section  h-full  min-h-screen  relative snowbg z-0    w-full"
+        className="section  h-full   min-h-screen  relative snowbg z-0    w-full"
       >
         <BackgroundLines className="flex absolute snowytext -top-52 items-center justify-center w-full flex-col px-4">
           <blockquote className="bg-clip-text uppercase text-transparent text-center bg-gradient-to-b from-blue-400 to-white dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">

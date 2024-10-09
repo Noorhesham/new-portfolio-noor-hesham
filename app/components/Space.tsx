@@ -75,10 +75,10 @@ const Space = () => {
           scrollTrigger: {
             trigger: ".spacebg",
             start: "top top",
-            end: "+=" + window.innerHeight * 5,
+            end: window.innerWidth >> 768 ? "+=" + window.innerHeight * 5 : "+=" + window.innerHeight * 3,
             scrub: true,
             scroller: ".main-container",
-            pin: ".spacebg"
+            pin: ".spacebg",
           },
         });
         const tl2 = gsap.timeline({
@@ -87,7 +87,6 @@ const Space = () => {
             start: window.innerHeight * 0.25,
             end: "+=" + window.innerHeight * 3,
             scrub: true,
-            markers: true,
             scroller: ".main-container",
           },
         });
@@ -263,18 +262,18 @@ const Space = () => {
           backgroundAttachment: "fixed",
         }}
       >
-        <div className=" w-full gap-4 flex z-0 flex-col px-10 mt-20 py-5 absolute left-1/2 -translate-x-1/2 justify-center items-center lastdiv">
+        <div className=" w-full gap-4 flex z-50 flex-col px-10 mt-20 py-5 absolute left-1/2 -translate-x-1/2 justify-center items-center lastdiv">
           <h1
-            className=" w-full  lg:w-auto text-4xl lg:text-5xl text-center font-extrabold text-white absolute top-10 left-[0%] lg:left-1/2 lg:-translate-x-1/2 
+            className=" w-full flex flex-col gap-3  lg:w-auto text-4xl lg:text-5xl text-center font-extrabold text-white absolute top-10 left-[0%] lg:left-1/2 lg:-translate-x-1/2 
       "
           >
             WHY WOULD YOU <span className=" text-pink-500">HIRE ME ?</span>
-            <button className="p-[3px] w-full mt-4 relative">
+            <a href="/cv.pdf" download="cv" className="p-[3px] w-full mt-10 relative">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
               <div className="lg:px-8 py-2   bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-                HERE IS WHY !
+                DOWNLOAD CV
               </div>
-            </button>
+            </a>
           </h1>
         </div>
         <div className=" boi w-96 z-[1] absolute h-96  top-[40%] md:top-40 left-1/2 -translate-x-1/2 ">

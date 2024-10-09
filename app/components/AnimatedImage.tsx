@@ -21,6 +21,7 @@ const animationMap: { [key: string]: any } = {
   "bgocean.json": () => import("../data/bgocean.json"),
   "diver.json": () => import("../data/diver.json"),
   "coffe.json": () => import("../data/coffe.json"),
+  "treature.json": () => import("../data/treasure.json"),
 };
 
 const AnimatedImage = ({ data = "animate1.json", className }: { data?: string; className?: string }) => {

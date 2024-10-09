@@ -14,7 +14,7 @@ const ProjectDescription = ({ project, moveback }: { project: any; moveback: () 
         <Button
           text="Back"
           onClick={moveback}
-          className="flex hover:text-purple duration-200 absolute z-50 top-0 left-5  w-fit items-center transition-all mb-5 3"
+          className="flex hover:text-purple duration-200 absolute z-50 top-0 left-10  w-fit items-center transition-all mb-5 3"
         />
       </DialogClose>
 
