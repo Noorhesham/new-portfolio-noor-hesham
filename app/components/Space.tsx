@@ -253,7 +253,7 @@ const Space = () => {
     <section>
       {" "}
       <section
-        className="spacebg overflow-hidden h-full relative"
+        className="spacebg overflow-hidden  h-full relative"
         style={{
           backgroundImage: "url('/space/2107 (1).svg')",
           backgroundSize: "cover",

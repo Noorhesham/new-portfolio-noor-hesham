@@ -17,7 +17,7 @@ const TechStack = () => {
       const ctx = gsap.context(() => {
         ScrollTrigger.create({
           trigger: ".tech",
-          start: "top top",
+          start: "top-100px top",
           end: "+=" + window.innerHeight * 2,
           scroller: ".main-container",
           scrub: true,
@@ -86,7 +86,7 @@ const TechStack = () => {
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
       }}
-      className="tech relative flex  justify-center  h-screen"
+      className="tech relative flex  justify-center  h-[110vh]"
     >
       <div className="boat z-20 w-full h-64 absolute top-40 -right-64">
         <Image alt="boat" fill src="/boat.svg" />
