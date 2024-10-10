@@ -10,7 +10,7 @@ const ProjectCard = ({ project, onClick }: { project: any; onClick: () => void }
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ stiffness: 0.3, duration: 1 }}
+      transition={{ stiffness: 0.3, duration: 1 }} className=" w-full"
     >
       <CardContainer className="inter-var w-full h-full relative ">
         <CardBody className="bg-gray-50 flex flex-col  relative group/card h-full   dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto   rounded-xl p-6 border  ">

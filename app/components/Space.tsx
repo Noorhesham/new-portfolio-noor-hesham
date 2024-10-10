@@ -198,21 +198,24 @@ const Space = () => {
             },
             "<-"
           );
-
         const tllast = gsap.timeline({});
+
         tllast
-          .to(".earth", {
-            y: 900,
-            opacity: 0,
-            scrollTrigger: {
-              trigger: ".earth",
-              start: window.innerHeight * 3,
-              end: "+=" + window.innerHeight * 4,
-              scrub: true,
-              scroller: ".main-container",
-              pin: ".earth",
-            },
-          })
+          .fromTo(
+            ".earth",
+            { opacity: 1 },
+            {
+              y: 900,
+              opacity: 0,
+              scrollTrigger: {
+                trigger: ".earth",
+                start: window.innerHeight * 3,
+                end: "+=" + window.innerHeight * 4,
+                scrub: true,
+                scroller: ".main-container",
+              },
+            }
+          )
           .to(".planet", {
             y: 600,
             opacity: 0,
@@ -222,7 +225,6 @@ const Space = () => {
               end: "+=" + window.innerHeight * 3.5,
               scrub: true,
               scroller: ".main-container",
-              pin: ".planet",
             },
           });
 
@@ -306,7 +308,7 @@ const Space = () => {
           <p className="char capitalize inline-block">MERN STACK </p>
           <span className="char capitalize text-pink-500">DEVELOPER with Next.js</span>
         </h1>
-        <div className="write absolute  z-30 top-52  left-[30%] lg:left-1/2 -translate-x-1/2  ">
+        <div className="write absolute  z-30 top-52  left-[38%] lg:left-1/2 -translate-x-1/2  ">
           <TypeWriter
             words={[
               "3 YEARS  AS FULL STACK WEB DEVELOPER",

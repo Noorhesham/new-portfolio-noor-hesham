@@ -30,7 +30,7 @@ const Journey = () => {
         .fromTo(".rocks2", { x: 800 }, { x: 0, duration: 1 }, "<-")
         .fromTo(
           ".car",
-          { scale: 1, x: 0, y: 0 },
+          { scale: 1, x: 0 },
           {
             scale: 0.6,
 
@@ -45,16 +45,7 @@ const Journey = () => {
             },
           }
         )
-        .to(".car", {
-          duration: 1,
-          scrollTrigger: {
-            trigger: ".car",
-            start: "top top",
-            end: "+=" + window.innerHeight * 2.2,
-            scrub: true,
-            scroller: ".main-container",
-          },
-        })
+
         .fromTo(
           ".dive-title",
           { x: 0 },
@@ -85,9 +76,9 @@ const Journey = () => {
             },
           }
         )
-        .fromTo(
+        .to(
           ".car",
-          { y: 0 },
+
           {
             y: -100,
             duration: 1,

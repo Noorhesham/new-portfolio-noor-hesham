@@ -80,7 +80,7 @@ const Snow = () => {
         }}
         className="section  h-full   min-h-screen  relative snowbg z-0    w-full"
       >
-        <BackgroundLines className="flex absolute snowytext -top-52 items-center justify-center w-full flex-col px-4">
+        <BackgroundLines className="flex absolute snowytext lg:-top-52 items-center justify-center w-full flex-col px-4">
           <blockquote className="bg-clip-text uppercase text-transparent text-center bg-gradient-to-b from-blue-400 to-white dark:from-neutral-600 dark:to-white text-2xl md:text-4xl lg:text-7xl font-sans py-2 md:py-10 relative z-20 font-bold tracking-tight">
             With great power <br /> comes great responsibility.
           </blockquote>
@@ -100,7 +100,7 @@ const Snow = () => {
           content={<CopyEmail />}
         />
 
-        <div className="noor opacity-0 bottom-96 lg:bottom-20 -right-2 lg:right-20  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">
+        <div className="noor opacity-0 bottom-96 lg:bottom-20 right-10 lg:right-20  absolute aspect-square rounded-full overflow-hidden w-72  h-72 lg:h-96 lg:w-96  z-10">
           <Image src="/noor.jpg" className=" object-cover w-full h-full" alt="ground" fill />
         </div>
         <div className="tree opacity-0 -bottom-4 right-16  absolute aspect-square rounded-full overflow-hidden h-96 w-96  z-10">

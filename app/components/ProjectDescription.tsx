@@ -10,7 +10,7 @@ const ProjectDescription = ({ project, moveback }: { project: any; moveback: () 
 
   return (
     <div className=" text-white relative  h-full mb-12 mt-10 items-center justify-center  w-[80vw]" key={project.id}>
-      <DialogClose>
+      <DialogClose className=" lg:block hidden">
         <Button
           text="Back" 
           onClick={moveback}

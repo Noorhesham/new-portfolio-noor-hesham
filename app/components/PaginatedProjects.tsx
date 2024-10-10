@@ -47,7 +47,7 @@ const PaginatedProjects = ({
   return (
     <>
       <div
-        className={`md:grid auto-rows-fr flex flex-wrap md:grid-cols-2 xl:grid-cols-3 items-stretch  justify-center md:gap-10`}
+        className={`md:grid auto-rows-fr flex flex-wrap md:grid-cols-2 xl:grid-cols-3 items-stretch  justify-center gap-3 md:gap-10`}
       >
         {currentProjects.map((project: any) => (
           <ModalCustom
