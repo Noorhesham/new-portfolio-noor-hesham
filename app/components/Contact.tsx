@@ -40,7 +40,7 @@ function Contact() {
   }
 
   return (
-    <div
+    <MaxWidthWrapper
       id="contact"
       className=" bg-[#0f1b33] z-[9998]  relative flex justify-center mt-10  py-20 lg:py-40 px-10 lg:px-20 overflow-hidden"
     >
@@ -52,7 +52,7 @@ function Contact() {
       >
         <motion.div className=" flex-col  text-gray-200 z-40  dark:text-gray-200 gap-4 flex  capitalize ">
           <motion.h1
-            className=" text-violet-500 text-xl lg:text-4xl xl:text-7xl font-semibold mb-5 "
+            className=" text-[#4BC9C0] text-xl lg:text-4xl xl:text-5xl font-semibold mb-5 "
             variants={variants}
           >
             contact me now !
@@ -70,7 +70,7 @@ function Contact() {
             <span>+20 1145838187</span>
           </motion.div>
         </motion.div>
-        <div className=" z-[9998]   relative" ref={ref}>
+        <div  className=" z-[9998] w-full   relative" ref={ref}>
           <motion.div
             className=" z-50 relative"
             initial={{ opacity: 1 }}
@@ -81,7 +81,7 @@ function Contact() {
               initial={{ opacity: 1 }}
               whileInView={{ opacity: 0 }}
               transition={{ delay: 3, duration: 1 }}
-              className=" z-50 absolute m-auto stroke-violet-600 w-[20rem] h-[20rem] lg:w-[450px] lg:h-[450px]"
+              className=" z-50 absolute m-auto stroke-[#4BC9C0] w-[20rem] h-[20rem] lg:w-[450px] lg:h-[450px]"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
@@ -111,41 +111,40 @@ function Contact() {
           <motion.form
             onSubmit={sendEmail}
             ref={formRef}
-            className="flex flex-col items-start lg:items-stretch gap-10 flex-1 w-auto lg:w-[50rem] relative z-50"
+            className="flex flex-col w-full items-start lg:items-stretch gap-10 flex-1 lg:w-[50rem] relative z-50"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 3, duration: 1 }}
           >
             <input
-              className=" p-4 px-8 text-gray-100   bg-[rgb(4,7,29)] rounded-lg border-violet-400 border-2 outline-none"
+              className=" p-4 px-8 w-full text-gray-100   bg-[rgb(4,7,29)] rounded-lg border-[#4BC9C0] border-2 outline-none"
               type="text"
               required
               placeholder="name"
               name="name"
             />
             <input
-              className=" p-4 px-8 text-gray-100  bg-[rgb(4,7,29)] rounded-lg border-violet-400 border-2 outline-none"
+              className=" p-4 px-8 text-gray-100  bg-[rgb(4,7,29)] rounded-lg border-[#4BC9C0] border-2 outline-none"
               type="email"
               required
               placeholder="Email"
               name="email"
             />
             <textarea
-              className=" p-4 px-8 text-gray-100  bg-[rgb(4,7,29)] rounded-lg border-violet-400 border-2 outline-none"
+              className=" p-4 w-full px-8 text-gray-100  bg-[rgb(4,7,29)] rounded-lg border-[#4BC9C0] border-2 outline-none"
               placeholder="Message"
               rows={8}
               name="message"
-            ></textarea>
-            <MagicButton text="Submit" disabled={pending} />
-
+            ></textarea>{" "}
             <span className=" text-violet-600 ">
               {err && "Error"}
               {success && "Email sent successfully"}
             </span>
+            <MagicButton text="Submit" disabled={pending} />
           </motion.form>
         </div>
       </motion.div>
-    </div>
+    </MaxWidthWrapper>
   );
 }
 export default Contact;

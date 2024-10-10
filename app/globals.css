@@ -108,3 +108,12 @@ body {
 .heading {
   @apply font-bold text-4xl text-white md:text-5xl text-center;
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  
+}

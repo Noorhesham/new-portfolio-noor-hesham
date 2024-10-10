@@ -7,7 +7,7 @@ const Clients = () => {
     <section id="testimonials" className="py-20">
       <h1 className="heading mb-5">
         My Education and
-        <span className="text-purple"> Certificates </span>
+        <span className="text-[#4BC9C0]"> Certificates </span>
       </h1>
 
       <div className="flex flex-col items-center max-lg:mt-10">

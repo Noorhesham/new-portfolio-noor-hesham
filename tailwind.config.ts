@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
-
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -61,8 +64,14 @@ const config: Config = {
     animation: {
       shimmer: "shimmer 2s linear infinite",
       "meteor-effect": "meteor 5s linear infinite",
+      scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
     },
     keyframes: {
+      scroll: {
+        to: {
+          transform: "translate(calc(-50% - 0.5rem))",
+        },
+      },
       meteor: {
         "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
         "70%": { opacity: "1" },
@@ -84,4 +93,12 @@ const config: Config = {
   },
   plugins: [require("tailwindcss-animate")],
 };
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+
+  addBase({
+    ":root": newVars,
+  });
+}
 export default config;

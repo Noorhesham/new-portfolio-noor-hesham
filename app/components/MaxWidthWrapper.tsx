@@ -5,16 +5,16 @@ const MaxWidthWrapper = ({
   children,
   noPadding = false,
   noPaddingX = false,
-  id,
+  id,ref
 }: {
   className?: string;
   children: React.ReactNode;
   noPadding?: boolean;
   noPaddingX?: boolean;
-  id?: string;
+  id?: string;ref?:any
 }) => {
   return (
-    <div
+    <div ref={ref}
       dir="ltr"
       id={id || ""}
       className={`${className || ""} max-w-[1350px] w-full mx-auto ${noPadding ? " py-0" : "py-5 lg:py-10"}   ${

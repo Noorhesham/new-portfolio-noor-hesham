@@ -94,7 +94,7 @@ export const InfiniteMovingCards = ({
             </div>
             <div className="flex flex-col self-end mt-auto">
               <span className="text-xl font-bold leading-[1.6] text-white">{item.name}</span>
-              <span className=" text-sm leading-[1.6] text-white-200 font-normal">{item.title}</span>
+              <span className=" text-sm uppercase my-2 leading-[1.6] text-[#4BC9C0] text-white-200 font-bold">{item.title}</span>
               <span className=" relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">
                 {item.quote}
               </span>
@@ -102,10 +102,10 @@ export const InfiniteMovingCards = ({
                 <a
                   href={item.link}
                   target="_blank"
-                  className=" mt-2 ml-auto flex lg:text-xl md:text-xs text-sm text-purple"
+                  className=" mt-2 ml-auto flex lg:text-xl md:text-xs text-sm text-[#4BC9C0]"
                 >
                   Check certificate
-                  <FaLocationArrow className=" ms-3" color="#CBACF9" />
+                  <FaLocationArrow className=" ms-3" color="#4BC9C0" />
                 </a>
               </div>
             </div>

@@ -6,13 +6,13 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900">
+    <footer className="bg-slate-900 uppercase">
       {" "}
       <MaxWidthWrapper className="w-full  text-white mb-[100px]  md:mb-5 pb-10" id="contact">
         {/* background grid */}
         <div className="flex flex-col items-center">
           <h1 className="heading lg:max-w-[45vw]">
-            Ready to take <span className="text-purple">your</span> digital presence to the next level?
+            Ready to take <span className="text-[#4BC9C0]">your</span> digital presence to the next level?
           </h1>
           <p className="text-white-200 md:mt-10 my-5 text-center">
             Reach out to me today and let&apos;s discuss how I can help you achieve your goals.
