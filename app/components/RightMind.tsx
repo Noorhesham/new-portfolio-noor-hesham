@@ -137,8 +137,8 @@ const RightMind = () => {
       <div className="  w-full flex-1 top-10 absolute text-center headline5 m-auto text-6xl text-white font-extrabold ">
         SOME OF MY<span className=" text-pink-500"> FREELANCING PROJECTS</span>
       </div>
-      <MaxWidthWrapper className=" left-[60%] lg:left-1/2 -translate-x-1/2 absolute top-[30%]   lg:top-24 z-40  meteors">
-        <SwiperCards
+      <MaxWidthWrapper className=" left-[60%] h-full lg:left-1/2 -translate-x-1/2 absolute top-[30%]   lg:top-24 z-40  meteors">
+        <SwiperCards className=" h-full w-full"
           autoplay={true}
           items={JOBS.map((job, i) => {
             return { card: <CardMeteors key={i} job={job} /> };

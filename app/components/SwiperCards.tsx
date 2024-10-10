@@ -61,20 +61,18 @@ const SwiperCards = ({
         slidesPerView={slidesPerView || 3.4}
         className={`w-full   ${className || "h-96"}`}
       >
-        {items.map(({ src,text, card }: { src: string; text: string; card: ReactNode }, i: number) => (
-          <SwiperSlide className={`w-full h-full  min-h-96`} key={i}>
-            {card ? (
-              <div className="  w-full"> {card}</div>
-            ) : (
-              <>
-                {
-            <img className=" h-auto rounded-xl" src={src} alt={src} />
-
-                }
-              </>
-            )}
-          </SwiperSlide>
-        ))}
+        {items.map(({ src, text, card }: { src: string; text: string; card: ReactNode }, i: number) => {
+          console.log(src);
+          return (
+            <SwiperSlide className={`w-full h-full  min-h-96`} key={i}>
+              {card ? (
+                <div className="  w-full"> {card}</div>
+              ) : (
+                <img className="w-full h-full object-cover rounded-xl" src={src} alt={src} />
+              )}
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );

@@ -105,3 +105,6 @@ body {
   width: 0%;
   background-color: #f83fa7;
 }
+.heading {
+  @apply font-bold text-4xl text-white md:text-5xl text-center;
+}

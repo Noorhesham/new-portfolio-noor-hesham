@@ -1,4 +1,3 @@
-"use client";
 import ScrollX from "./components/ScrollX";
 import Snow from "./components/Snow";
 import Space from "./components/Space";
@@ -9,26 +8,22 @@ import DeepOcean from "./components/DeepOcean";
 import RightMind from "./components/RightMind";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import ContactMe from "./components/ContactMe";
+import Clients from "./components/Clients";
 
 function Page() {
   return (
     <section className="stickysection">
-      {
-        <>
-          <Space />
-          <RightMind />
-          <Snow />
-          <ScrollX />
-          <Journey />
-          <TechStack />
-          <Ocean />
-          <DeepOcean />
-
-          <Contact />
-          <Footer />
-        </>
-      }
+      <Space />
+      <RightMind />
+      <Snow />
+      <ScrollX />
+      <Journey />
+      <TechStack />
+      <Ocean />
+      <DeepOcean />
+      <Contact />
+      <Clients />
+      <Footer />
     </section>
   );
 }

@@ -12,9 +12,9 @@ const ProjectDescription = ({ project, moveback }: { project: any; moveback: () 
     <div className=" text-white relative  h-full mb-12 mt-10 items-center justify-center  w-[80vw]" key={project.id}>
       <DialogClose>
         <Button
-          text="Back"
+          text="Back" 
           onClick={moveback}
-          className="flex hover:text-purple duration-200 absolute z-50 top-0 left-10  w-fit items-center transition-all mb-5 3"
+          className="flex hover:text-purple duration-200 absolute z-50 top-0 left-20  w-fit items-center transition-all mb-5 3"
         />
       </DialogClose>
 
@@ -25,7 +25,7 @@ const ProjectDescription = ({ project, moveback }: { project: any; moveback: () 
               slidesPerView={1}
               autoplay
               items={[
-                project.img.map((img) => {
+               ... project.img.map((img) => {
                   return { src: img };
                 }),
               ]}

@@ -34,7 +34,6 @@ const Journey = () => {
           {
             scale: 0.6,
 
-            x: 100,
             duration: 1,
             scrollTrigger: {
               trigger: ".car",
@@ -46,8 +45,8 @@ const Journey = () => {
           }
         )
         .to(".car", {
-          x: 150,
           duration: 1,
+          x: 150,
           scrollTrigger: {
             trigger: ".car",
             start: "top top",

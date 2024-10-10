@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import Button from "./ButtonColorful";
 import Image from "next/image";
 import MagicButton from "./MagicButton";
+import MaxWidthWrapper from "./MaxWidthWrapper";
 
 function Contact() {
   const ref = useRef<any>();
@@ -39,7 +40,10 @@ function Contact() {
   }
 
   return (
-    <section id="contact" className=" bg-[#0f1b33] flex justify-center mt-10  py-40 px-20 overflow-hidden">
+    <MaxWidthWrapper
+      id="contact"
+      className=" bg-[#0f1b33] z-[9998]  relative flex justify-center mt-10  py-40 px-20 overflow-hidden"
+    >
       <motion.div
         className=" flex items-center lg:items-start gap-20 lg:flex-row flex-col "
         variants={variants}
@@ -66,7 +70,7 @@ function Contact() {
             <span>+20 1145838187</span>
           </motion.div>
         </motion.div>
-        <div className=" relative" ref={ref}>
+        <div className=" z-[9998]   relative" ref={ref}>
           <motion.div
             className=" z-50 relative"
             initial={{ opacity: 1 }}
@@ -107,13 +111,13 @@ function Contact() {
           <motion.form
             onSubmit={sendEmail}
             ref={formRef}
-            className="flex flex-col items-start lg:items-stretch gap-10 flex-1 w-auto lg:w-[50rem] relative z-10"
+            className="flex flex-col items-start lg:items-stretch gap-10 flex-1 w-auto lg:w-[50rem] relative z-50"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 3, duration: 1 }}
           >
             <input
-              className=" p-4 px-8 text-gray-100  bg-[rgb(4,7,29)] rounded-lg border-violet-400 border-2 outline-none"
+              className=" p-4 px-8 text-gray-100   bg-[rgb(4,7,29)] rounded-lg border-violet-400 border-2 outline-none"
               type="text"
               required
               placeholder="name"
@@ -132,19 +136,8 @@ function Contact() {
               rows={8}
               name="message"
             ></textarea>
-            <MagicButton text="Submit" disabled={pending}>
-              {pending ? (
-                <Image
-                  width={50}
-                  alt="loading"
-                  height={50}
-                  src="/loading.png"
-                  className=" animate-spin mx-auto text-center w-5 h-5"
-                />
-              ) : (
-                "Submit"
-              )}
-            </MagicButton>
+            <MagicButton text="Submit" disabled={pending} />
+
             <span className=" text-violet-600 ">
               {err && "Error"}
               {success && "Email sent successfully"}
@@ -152,7 +145,7 @@ function Contact() {
           </motion.form>
         </div>
       </motion.div>
-    </section>
+    </MaxWidthWrapper>
   );
 }
 export default Contact;
