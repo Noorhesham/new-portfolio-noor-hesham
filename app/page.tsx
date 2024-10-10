@@ -24,6 +24,7 @@ function Page() {
           <TechStack />
           <Ocean />
           <DeepOcean />
+
           <Contact />
           <Footer />
         </>

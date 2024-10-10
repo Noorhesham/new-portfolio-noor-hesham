@@ -48,7 +48,7 @@ const ModalCustom = ({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{btn}</DialogTrigger>
       {small ? (
-        <DialogContent className=" py-10 overflow-hidden bg-slate-800 max-w-2xl overflow-y-auto max-h-[80vh] w-full sm:rounded-[1.8rem]">
+        <DialogContent className=" py-10  overflow-y-scroll  bg-slate-800 max-w-2xl max-h-[80vh] w-full sm:rounded-[1.8rem]">
           <MaxWidthWrapper noPadding>{content}</MaxWidthWrapper>
         </DialogContent>
       ) : (
