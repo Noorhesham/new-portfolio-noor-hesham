@@ -40,9 +40,9 @@ function Contact() {
   }
 
   return (
-    <MaxWidthWrapper
+    <div
       id="contact"
-      className=" bg-[#0f1b33] z-[9998]  relative flex justify-center mt-10  py-40 px-20 overflow-hidden"
+      className=" bg-[#0f1b33] z-[9998]  relative flex justify-center mt-10  py-20 lg:py-40 px-10 lg:px-20 overflow-hidden"
     >
       <motion.div
         className=" flex items-center lg:items-start gap-20 lg:flex-row flex-col "
@@ -145,7 +145,7 @@ function Contact() {
           </motion.form>
         </div>
       </motion.div>
-    </MaxWidthWrapper>
+    </div>
   );
 }
 export default Contact;

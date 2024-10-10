@@ -113,10 +113,10 @@ const Journey = () => {
       }}
       className=" relative journy min-h-screen"
     >
-      <h1 className=" text-5xl lg:text-7xl lg:w-full w-fit dive-title absolute left-[28%]  top-32 font-extrabold text-white text-nowrap">
+      <h1 className=" text-5xl z-20 lg:text-7xl lg:w-full w-fit dive-title absolute left-[28%]  top-32 font-extrabold text-white text-nowrap">
         LETS DIVE INTO A JOURNEY OF MY MY SOLO PROJECTS !
       </h1>
-      <div className="moon top-0 right-72 w-96 h-96 absolute">
+      <div className="moon top-0 right-10 z-10 lg:right-72 w-96 h-96 absolute">
         <Image src={"/moon.svg"} alt="moon" fill />
       </div>{" "}
       <div className=" rocks2  bottom-0 -right-[28%] w-full h-[40rem] absolute">

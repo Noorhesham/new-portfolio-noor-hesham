@@ -9,7 +9,7 @@ const Diver = () => {
           <div key={index} className={`bubble x${index + 1}`}></div>
         ))}
       </div>
-      <div className="content w-[44rem] relative z-10 flex justify-center">
+      <div className="content w-full lg:w-[44rem] relative z-10 flex justify-center">
         {/* Submarine SVG */}
         <svg
           id="submarine"
