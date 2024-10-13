@@ -20,6 +20,9 @@ const useLocoScroll = () => {
       mobile: {
         smooth: true,
       },
+      tablet: {
+        breakpoint: 0, // <---- Fixes The Issue 🎉
+      },
     });
 
     locoScrollInstance.on("scroll", ScrollTrigger.update);
