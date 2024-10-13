@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import "locomotive-scroll/src/locomotive-scroll.scss";
 import { SmoothScrollProvider } from "./context/SmoothScrollProvider";
 import { LoaderProvider } from "./context/LoaderProvider";
 import ContactMe from "./components/ContactMe";
+import { Inter } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Noor Hesham Portfolio",
@@ -30,7 +21,7 @@ export const metadata: Metadata = {
         alt: "Noor Hesham Portfolio",
       },
     ],
-    url: "https://noor-hesham-portfolio.vercel.app/",
+    url: "https://new-portfolio-noor-hesham.vercel.app/",
   },
   description:
     "MERN Stack Developer specializing in React, Next.js, TypeScript,Node .js,Mongo DB and Tailwind CSS. Proven track record of crafting high-performance web applications with sleek, user-friendly interfaces. Adaptable and detail-oriented, committed to delivering top-notch solutions. Passionate about staying ahead in technology and contributing to dynamic teams.",
@@ -43,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}  dark`}>
+      <body className={`${inter.classNames} dark`}>
         <LoaderProvider>
           <SmoothScrollProvider>
             <ContactMe />
