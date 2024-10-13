@@ -20,6 +20,8 @@ const useLocoScroll = () => {
       mobile: {
         smooth: true,
       },
+      smoothMobile: true,
+
       tablet: {
         breakpoint: 0, // <---- Fixes The Issue 🎉
       },
