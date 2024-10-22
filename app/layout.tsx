@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         alt: "Noor Hesham Portfolio",
       },
     ],
-    url: "https://new-portfolio-noor-hesham.vercel.app/",
+    url: "https://new-portfolio-noor-hesham.vercel.app",
   },
   description:
     "MERN Stack Developer specializing in React, Next.js, TypeScript,Node .js,Mongo DB and Tailwind CSS. Proven track record of crafting high-performance web applications with sleek, user-friendly interfaces. Adaptable and detail-oriented, committed to delivering top-notch solutions. Passionate about staying ahead in technology and contributing to dynamic teams.",
