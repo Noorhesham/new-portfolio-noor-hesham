@@ -285,7 +285,7 @@ export const projects = [
     id: 1231223,
     title: "SPIDER MAN ANIMATION ! ",
     des: `complex animations with gsap that has zoom ins outs , sequence animations split text and more `,
-    img: ["Screenshot 2024-11-01 075447.png"],
+    img: ["/Screenshot 2024-11-01 075447.png"],
     gen: "Next",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg", "/next.webp", "/logo.gif"],
     link: "https://gsap-animations-neon.vercel.app/m",
