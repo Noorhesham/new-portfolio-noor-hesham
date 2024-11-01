@@ -5,10 +5,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import AnimatedImage from "./AnimatedImage";
 import PaginatedProjects from "./PaginatedProjects";
-import { projects } from "@/public";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Diver from "./Diver";
 import Contact from "./Contact";
+import { projects } from "@/constants";
 
 gsap.registerPlugin(ScrollTrigger);
 
