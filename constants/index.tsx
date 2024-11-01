@@ -258,7 +258,18 @@ export const projects = [
     video: "https://www.youtube.com/embed/le8_Q7OT52E",
     git: "https://github.com/Noorhesham/gaming-castle",
   },
+  {
+    id: 4343,
+    title: "Naruto Website | Gsap Scroll Animations",
+    des: `using three js and framer motion i designed this beutiful clean landing page for a company as a freelance project
 
+`,
+    gen: "Javascript",
+    img: "/landing.png",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/next.webp", "/logo.gif"],
+    git: "https://github.com/Noorhesham/landingPage-for-exanor",
+    link: "https://landing-page-for-exanor.vercel.app/",
+  },
   {
     id: 123123,
     title: "Animation ! ",
@@ -266,8 +277,19 @@ export const projects = [
     img: ["/Screenshot 2024-09-24 142729.png"],
     gen: "Next",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg", "/next.webp", "/query.png", "/logo.gif"],
-    link: "https://tabib-sooty.vercel.app/",
+    link: "https://gsap-animations-neon.vercel.app/goku",
     video: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7238666417749843968?compact=1",
+    git: "https://github.com/Noorhesham/moon-parallex",
+  },
+  {
+    id: 1231223,
+    title: "SPIDER MAN ANIMATION ! ",
+    des: `complex animations with gsap that has zoom ins outs , sequence animations split text and more `,
+    img: ["Screenshot 2024-11-01 075447.png"],
+    gen: "Next",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/fm.svg", "/next.webp", "/logo.gif"],
+    link: "https://gsap-animations-neon.vercel.app/m",
+    video: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7246623238993178624?compact=1",
     git: "https://github.com/Noorhesham/moon-parallex",
   },
   {
@@ -277,7 +299,7 @@ export const projects = [
     img: ["/Screenshot 2024-08-23 070813.png"],
     gen: "Next",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg", "/next.webp", "/query.png", "/logo.gif"],
-
+    link: "https://gsap-animations-neon.vercel.app/",
     video: "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7232614752730968064?compact=1",
     git: "https://github.com/Noorhesham/moon-parallex",
   },
@@ -396,7 +418,7 @@ export const projects = [
     gen: "React",
     des: "A landing page for a company  as a freelance project on freelancer,using 3d models and animations , fully responsive and type safe ",
     git: "https://github.com/Noorhesham/landingPage-for-exanor",
-    iconLists: ["/next.webp", "/tail.svg", "/ts.svg", "/re.svg", "/fm.svg", "/three.svg"],
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg", "/next.webp"],
     video: "https://www.youtube.com/embed/oD2Mbo_rCGc",
     id: 435,
   },
